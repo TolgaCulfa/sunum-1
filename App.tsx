@@ -115,7 +115,6 @@ const App: React.FC = () => {
               </div>
               <div className="hidden md:block w-px h-16 bg-white/10 mx-4"></div>
               <p className="text-white/60 italic text-xl max-w-xs">
-                "Basın, milletin müşterek sesidir."
               </p>
             </div>
           </div>

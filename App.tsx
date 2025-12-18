@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { PRESENTERS } from './constants';
 import { Presenter, Agency } from './types';
@@ -44,7 +43,7 @@ const App: React.FC = () => {
 
   const currentAgency: Agency | undefined = currentPresenter?.agencies[agencyIndex];
 
-  // SELECTION SCREEN - Smart Board Optimized
+  // SELECTION SCREEN
   if (screen === 'selection') {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6 md:p-12 font-sans overflow-hidden">
@@ -86,57 +85,63 @@ const App: React.FC = () => {
     );
   }
 
-  // END SCREEN - Professional & Warm
+  // END SCREEN - GELİŞTİRİLMİŞ & TEBRİK ODAKLI
   if (screen === 'end') {
     return (
-      <div className="min-h-screen bg-[#020617] flex flex-col items-center justify-center text-center p-12 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-blue-600/10 pointer-events-none"></div>
+      <div className="min-h-screen bg-[#020617] flex flex-col items-center justify-center text-center p-6 md:p-12 overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-blue-600/10 pointer-events-none"></div>
         
-        <div className="relative z-10 animate-scaleIn">
-          <div className="w-40 h-40 bg-white rounded-full flex items-center justify-center mx-auto mb-10 shadow-[0_0_80px_rgba(255,255,255,0.2)] animate-pulse">
-            <i className="fa-solid fa-heart text-6xl text-red-600"></i>
+        <div className="relative z-10 animate-scaleIn flex flex-col items-center">
+          {/* Başarı İkonu */}
+          <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center mb-10 shadow-[0_0_80px_rgba(255,255,255,0.15)] animate-pulse border-8 border-slate-900">
+            <i className="fa-solid fa-trophy text-6xl text-red-600"></i>
           </div>
           
-          <h1 className="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter">Harikaydınız!</h1>
+          <h1 className="text-6xl md:text-9xl font-black text-white mb-6 tracking-tighter italic uppercase animate-bounce">TEBRİKLER!</h1>
           
-          <div className="max-w-4xl mx-auto space-y-8 mb-16">
-            <p className="text-slate-300 text-2xl md:text-3xl leading-relaxed font-light">
-              Geleceğin gazeteci adayları olarak sergilediğiniz bu harika performans için hepinize teşekkür ederiz. Unutmayın; doğru bilgi, en büyük güçtür!
+          <div className="max-w-4xl mx-auto space-y-8 mb-12">
+            <p className="text-slate-300 text-2xl md:text-4xl leading-relaxed font-light italic">
+              "Geleceğin medya profesyonelleri olarak muhteşem bir performans sergilediniz!"
             </p>
             
-            <div className="p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-center gap-8 shadow-2xl">
-              <div className="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center shrink-0">
-                <i className="fa-solid fa-chalkboard-user text-3xl text-white"></i>
+            {/* Hoca Kartı */}
+            <div className="inline-flex items-center gap-6 p-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[3rem] shadow-2xl transition-transform hover:scale-105">
+              <div className="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <i className="fa-solid fa-graduation-cap text-3xl text-white"></i>
               </div>
               <div className="text-left">
-                <p className="text-red-500 text-sm font-black tracking-widest mb-1 uppercase">DANIŞMAN ÖĞRETMEN</p>
-                <p className="text-white text-3xl font-bold">Eda Nur Güven</p>
-                <p className="text-slate-400 text-lg">Uzmanlık: Gazetecilik Alanı</p>
+                <p className="text-red-500 text-xs font-black tracking-[0.3em] mb-1 uppercase">DANIŞMAN ÖĞRETMEN</p>
+                <p className="text-white text-4xl font-black tracking-tight">Eda Nur Güven</p>
+                <p className="text-slate-400 text-lg italic opacity-80">Gazetecilik ve Medya Uzmanı</p>
               </div>
-              <div className="hidden md:block w-px h-16 bg-white/10 mx-4"></div>
-              <p className="text-white/60 italic text-xl max-w-xs">
-                "Basın, milletin müşterek sesidir."
-              </p>
             </div>
           </div>
 
           <button 
             onClick={() => { setFinishedPresenters([]); setScreen('selection'); }}
-            className="px-12 py-5 bg-white hover:bg-red-600 text-slate-900 hover:text-white font-black text-xl rounded-3xl transition-all shadow-2xl hover:shadow-red-500/40 flex items-center mx-auto group"
+            className="px-12 py-5 bg-white hover:bg-red-600 text-slate-900 hover:text-white font-black text-xl rounded-2xl transition-all shadow-2xl flex items-center group active:scale-95"
           >
             <i className="fa-solid fa-rotate-left mr-3 group-hover:rotate-[-180deg] transition-transform duration-700"></i>
             YENİ SUNUM BAŞLAT
           </button>
         </div>
+
+        {/* Footer / Branding */}
+        <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center opacity-60">
+            <div className="h-px w-20 bg-slate-700 mb-4"></div>
+            <p className="text-slate-400 text-lg md:text-xl font-medium tracking-wide">
+                <span className="text-slate-200 font-bold">Tolga & Crystaldev</span> Hakları Saklıdır 2024 ~ 2026
+            </p>
+        </div>
       </div>
     );
   }
 
-  // PRESENTATION SCREEN - Smart Board Navigation
+  // PRESENTATION SCREEN
   return (
     <div className={`min-h-screen transition-all duration-700 ${isDarkMode ? 'bg-[#0f172a]' : 'bg-slate-100'} flex items-center justify-center p-6 md:p-12 overflow-hidden relative`}>
       
-      {/* Smart Board Controls - Theme & Close */}
+      {/* Smart Board Controls */}
       <div className="fixed top-8 right-8 flex gap-4 z-50">
         <button 
           onClick={() => setIsDarkMode(!isDarkMode)}
@@ -215,7 +220,6 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          {/* Action Area */}
           <div className="mt-16">
             {agencyIndex === 1 ? (
               <button 

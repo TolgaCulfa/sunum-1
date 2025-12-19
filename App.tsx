@@ -109,13 +109,13 @@ const App: React.FC = () => {
                 <i className="fa-solid fa-chalkboard-user text-3xl text-white"></i>
               </div>
               <div className="text-left">
-                <p className="text-red-500 text-sm font-black tracking-widest mb-1 uppercase">DANIŞMAN ÖĞRETMEN</p>
+                <p className="text-red-500 text-xl font-black tracking-widest mb-1 uppercase">DANIŞMAN ÖĞRETMEN</p>
                 <p className="text-white text-3xl font-bold">Eda Nur Güven</p>
                 <p className="text-slate-400 text-lg">Uzmanlık: Gazetecilik Alanı</p>
               </div>
               <div className="hidden md:block w-px h-16 bg-white/10 mx-4"></div>
               <p className="text-white/60 italic text-xl max-w-xs">
-                "Basın, milletin müşterek sesidir."
+               
               </p>
             </div>
           </div>

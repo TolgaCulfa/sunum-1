@@ -101,21 +101,21 @@ const App: React.FC = () => {
           
           <div className="max-w-4xl mx-auto space-y-8 mb-16">
             <p className="text-slate-300 text-2xl md:text-3xl leading-relaxed font-light">
-              Geleceğin gazeteci adayları olarak sergilediğiniz bu harika performans için hepinize teşekkür ederiz. Unutmayın; doğru bilgi, en büyük güçtür!
+              SUNUM BİTMİŞİTİR
             </p>
             
             <div className="p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-center gap-8 shadow-2xl">
               <div className="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center shrink-0">
                 <i className="fa-solid fa-chalkboard-user text-3xl text-white"></i>
-              </div>
-              <div className="text-left">
-                <p className="text-red-500 text-sm font-black tracking-widest mb-1 uppercase">DANIŞMAN ÖĞRETMEN</p>
-                <p className="text-white text-3xl font-bold">Eda Nur Güven</p>
-                <p className="text-slate-400 text-lg">Uzmanlık: Gazetecilik Alanı</p>
-              </div>
+<div className="text-left">
+  {/* text-sm yerine text-xl kullanarak yazıyı büyüttük */}
+  <p className="text-red-500 text-xl font-black tracking-widest mb-2 uppercase">ÖĞRETMEN</p>
+  <p className="text-white text-3xl font-bold">Eda Nur Güven</p>
+  <p className="text-slate-400 text-lg">Uzmanlık: Gazetecilik Alanı</p>
+</div>
               <div className="hidden md:block w-px h-16 bg-white/10 mx-4"></div>
               <p className="text-white/60 italic text-xl max-w-xs">
-                "Basın, milletin müşterek sesidir."
+                
               </p>
             </div>
           </div>
